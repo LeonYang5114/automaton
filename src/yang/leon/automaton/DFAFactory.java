@@ -174,7 +174,7 @@ public class DFAFactory {
 	    return getMergedDestination(mergedStates, mergedIndex, symbol,
 		    next, visited);
 	}
-	return mergedStates[dfa[visiting].getDestination(symbol).getIndex()];
+	return mergedStates[visiting];
 
     }
 
