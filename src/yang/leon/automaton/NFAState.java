@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
 
-public class NFAState {
+public class NFAState implements Comparable<NFAState> {
 
     private boolean isFinalState;
     private Set<NFAState>[] destinations;
@@ -111,6 +111,10 @@ public class NFAState {
 	return index;
     }
 
+    public int getNumSymbols() {
+	return destinations.length;
+    }
+
     public static boolean isFinalState(Set<NFAState> setState) {
 	boolean isFinalState = false;
 	Iterator<NFAState> itr = setState.iterator();
@@ -149,5 +153,10 @@ public class NFAState {
 	epsil = "{" + epsil.substring(2) + "}";
 	return sf
 		.format(new Object[] { getIndex(), isFinalState(), dest, epsil });
+    }
+
+    @Override
+    public int compareTo(NFAState o) {
+	return getIndex() - o.getIndex();
     }
 }

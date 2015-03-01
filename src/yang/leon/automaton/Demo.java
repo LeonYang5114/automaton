@@ -28,9 +28,9 @@ public class Demo {
 	nfaFactory.make(test, finalStates);
 	NFAState[] nfa = nfaFactory.getNFA();
 	dfaFactory.makeFromNFA(nfaFactory);
+	dfaFactory.simplifyDFA();
 	DFAState[] dfa = dfaFactory.getDFA();
-	Arrays.sort(dfa);
-	int[] s = new int[] { 1, 1, 1, 0, 1, 1 };
+	int[] s = new int[] { 0, 1, 1, 0, 1, 0 };
 	System.out.println(NFAState.isFinalState(nfa[0].getDestination(s)));
 	System.out.println();
 	System.out.println(dfa[0].getDestination(s).isFinalState());

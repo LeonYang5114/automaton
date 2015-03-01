@@ -32,13 +32,25 @@ public class DFAState implements Comparable<DFAState> {
 	}
 	return destination;
     }
+    
+    public void setIsFinalState(boolean isFinalState) {
+	this.isFinalState = isFinalState;
+    }
 
     public boolean isFinalState() {
 	return isFinalState;
     }
+    
+    public void setIndex(int index) {
+	this.index = index;
+    }
 
     public int getIndex() {
 	return index;
+    }
+    
+    public int getNumSymbols() {
+	return destinations.length;
     }
 
     public String toString() {

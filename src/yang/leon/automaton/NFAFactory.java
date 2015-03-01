@@ -1,5 +1,6 @@
 package yang.leon.automaton;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Map;
@@ -57,6 +58,7 @@ public class NFAFactory {
 	    }
 	    nfa[from].setEpsilonExt(epsilonExt);
 	}
+	Arrays.sort(nfa);
     }
 
     public int getNumSymbols() {
